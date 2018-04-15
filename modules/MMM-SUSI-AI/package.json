@@ -1,0 +1,64 @@
+{
+  "name": "MMM-SUSI-AI",
+  "version": "0.1.0",
+  "description": "A Magic Mirror module for Susi",
+  "main": "MMM-SUSI-AI.js",
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "rimraf dist && npm run webpack && npm run tsc",
+    "webpack": "webpack --config config/webpack.main.js --progress --profile --bail --display-error-details",
+    "test": "npm run lint",
+    "electron-rebuild": "electron-rebuild --pre-gyp-fix",
+    "lint": "tslint --project .",
+    "tsc": "tsc -p . ",
+    "node-pre-gyp": "node-pre-gyp clean configure build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fossasia/MMM-SUSI-AI.git"
+  },
+  "keywords": [
+    "Susi",
+    "AI",
+    "Artificial Intelligence",
+    "Magic Mirror"
+  ],
+  "author": "betterclever",
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/fossasia/MMM-SUSI-AI/issues"
+  },
+  "homepage": "https://github.com/fossasia/MMM-SUSI-AI#readme",
+  "dependencies": {
+    "@types/leaflet": "^1.0.65",
+    "@types/node": "^8.0.2",
+    "@types/prop-types": "^15.5.1",
+    "@types/react": "^15.0.38",
+    "@types/react-dom": "^15.5.1",
+    "@types/request": "0.0.44",
+    "@types/timer-machine": "^1.1.0",
+    "command-promise": "^2.0.1",
+    "leaflet": "^1.1.0",
+    "nan": "^2.6.2",
+    "node-record-lpcm16": "^0.3.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-leaflet": "^1.4.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.4.1",
+    "snowboy": "^1.2.0",
+    "timer-machine": "^1.1.0",
+    "web-request": "^1.0.7"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.1.3",
+    "brfs": "^1.4.3",
+    "electron-rebuild": "^1.7.3",
+    "tslint": "^5.4.3",
+    "typescript": "^2.4.1",
+    "webpack": "^3.0.0"
+  }
+}
